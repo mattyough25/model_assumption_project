@@ -1,0 +1,110 @@
+% script to run model
+
+% NOTE: idTrialType 1:13 are movements, 14 is testing
+% NOTE: forward simuations need to be updated to latest Inv wrist
+sPath               = cd;
+sDataPath           = '/Volumes/Computer2/Desktop/Simulink Test Data';
+sModel              = 'RHand_20DOF_Inv_RU2.slx';
+sFile_metaSegment   = 'metaSegment_arm_RU2_50.csv';
+sFile_metaDOF       = 'metaDOF_arm.csv';
+idTrialTypeList     = [1]; %[1:65];
+tSim                = 0.5;  % duration of movement and simulation
+nRate               = 1000; % the number of samples in a trial
+bPlot               = 0;    % plotting ideal kinematics
+bReturn             = 0; % kinematics for return movement is created
+bModelCompare       = 1; % plotting torques between models
+bRMSE               = 1; % plotting RMSE values between models
+bTraj               = 1; %plotting trajectories
+bErr                = 1; %plotting trajectory errors
+
+%% create movement kinematics
+metaDOF         = load_csv('sFile',sFile_metaDOF);
+idDOF_list      = metaDOF.idDOF_simulink(~metaDOF.bLocked_simulink); % list of simulated idDOF
+nSignal         = numel(idDOF_list); 
+
+metaDOFsim.sDOFList             = metaDOF.sDOF(~metaDOF.bLocked_simulink);
+metaDOFsim.nRangeMin            = metaDOF.nRangeMin(~metaDOF.bLocked_simulink); % DOF min angle
+metaDOFsim.nRangeMax            = metaDOF.nRangeMax(~metaDOF.bLocked_simulink); % DOF max angle
+metaDOFsim.nIC                  = metaDOF.nIC(~metaDOF.bLocked_simulink); % default DOF initial conditions
+metaDOFsim.idDOF_simulink       = metaDOF.idDOF_simulink(~metaDOF.bLocked_simulink); % default DOF initial conditions
+metaDOFsim.nViscosity           = metaDOF.nViscosity(~metaDOF.bLocked_simulink); % default DOF initial conditions
+metaDOFsim.nStiffness_spring    = metaDOF.nStiffness_spring(~metaDOF.bLocked_simulink); % default DOF initial conditions
+metaDOFsim.nAngle_spring_ref    = metaDOF.nAngle_spring_ref(~metaDOF.bLocked_simulink); % default DOF initial conditions
+metaDOFsim.nGravity             = 9.81; %Gravity, m/s^2
+sDOFList        = metaDOFsim.sDOFList ;
+for idTrialType = idTrialTypeList
+    %% generate movement for each DOF
+    nMoveRange = setMoveRange(idTrialType,metaDOF.nRangeMin([8:25,29:30]),...
+        metaDOF.nRangeMax([8:25,29:30]),metaDOF.nIC([8:25,29:30]));
+    % set simulation kinematics
+    % first 7 DOFs are unsued in Simulink model
+    nKin  = getIdealTrajectory(nRate,tSim,sDOFList,nMoveRange,bReturn,bPlot);
+    clear pos vel acc
+    for iField = 1:nSignal
+        pos.(sDOFList{iField}) = double(nKin.(sDOFList{iField})(:,1)');
+        vel.(sDOFList{iField}) = double(nKin.(sDOFList{iField})(:,2)');
+        acc.(sDOFList{iField}) = double(nKin.(sDOFList{iField})(:,3)');
+    end
+    pos.tTime = nKin.tTime;
+    vel.tTime = nKin.tTime;
+    acc.tTime = nKin.tTime;
+    
+    % get model parameters and initialize
+    metaSegment = get_metaSegment('sFile',sFile_metaSegment);
+    save_csv(metaSegment,'sFile',[sPath,filesep,'_model_param.csv'])
+    
+    % initialize model
+    ini_simbody(pos,vel,acc,metaSegment,metaDOFsim)
+    
+    %   run inverse & forward simulations
+%     hInv = Simulink.SimulationInput('RHand_20DOF_Inv_RU2.slx');
+   % 
+    tTimeInv = sim(sModel); % inverse simulation to get applied torques
+%
+    clear tor
+    for iField = 1:nSignal
+        tor.(sDOFList{iField}) = tor_sim.signals.values(:,metaDOFsim.idDOF_simulink(iField));
+    end
+    tor.tTime = tor_sim.time;
+    
+    sPathRef     = ['/Volumes/Computer2/Desktop/OpenSim Test Data'];
+    sFileRef     = ['Sim_RHand_20DOF_Inv_idTrialType',num2str(idTrialType),'_idTrial',num2str(idTrialType),'.mat'];
+    
+    if bModelCompare
+        nRMSE(:,idTrialType) = plot_simbody_output(bTraj,bErr,tor,'bCompare',1,'sPathRef',sPathRef,'sFileRef',sFileRef,'bError',1);
+    end
+%     sim('RHand_20DOF_Fw.slx'); % forward simulation to apply torques and get   
+    %% plot errors
+%     psim.('ra_wr_e_f')      = pos_sim.signals.values(:,1);
+%     psim.('ra_wr_ad_ab')    = pos_sim.signals.values(:,2);
+%     psim.('ra_wr_s_p')      = pos_sim.signals.values(:,3);
+%     psim.('ra_cmc1_f_e')    = pos_sim.signals.values(:,4);
+%     psim.('ra_cmc1_ad_ab')  = pos_sim.signals.values(:,5);
+%     for iField = 6:nSignal
+%         psim.(sAngList{iField-1}) = pos_sim.signals.values(:,iField);
+%     end
+%     psim.tTime = pos_sim.time;
+%     nErr = plot_simbody_output(pos,psim,bPlot);
+%     err.('ra_wr_e_f')       = nErr(1);
+%     err.('ra_wr_ad_ab')     = nErr(2);
+%     err.('ra_wr_s_p')       = nErr(3);
+%     err.('ra_cmc1_f_e')     = nErr(4);
+%     err.('ra_cmc1_ad_ab')   = nErr(5);
+%     for iField = 6:nSignal
+%         err.(sAngList{iField-1}) = nErr(iField);
+%     end
+      err = NaN;
+    %% save data
+    sFile = [sDataPath,filesep,'RHand_20DOF_Inv_idTrialType',num2str(idTrialType),'_idTrial',num2str(idTrialType),'.mat'];
+    save(sFile,'pos','vel','acc','tor','err')
+    
+    sFileName(idTrialType) = string(['RHand_20DOF_Inv_idTrialType',num2str(idTrialType),'_idTrial',num2str(idTrialType),'.mat']);
+    
+    nData(idTrialType) = tor;
+    
+   % nRMSE(idTrialType,:) = calcRMSE(sFile,sFileRef,idTrialTypeList,sPath,sDataPath,sPathRef);
+end
+
+if bRMSE
+    plotRMSE(nData,nRMSE,sDataPath,sPath);
+end

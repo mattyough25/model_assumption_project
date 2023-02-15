@@ -1,0 +1,35 @@
+idDOF,sDOF,idDOF_simulink,bLocked_simulink,nRangeMin,nRangeMax,nIC,sNote,sLabel,nViscosity,nStiffness_spring,nAngle_spring_ref
+1,thorax_rot1,0,1,-1.5708,1.5708,0,Trunk abduction/adduction or side-to-side motion,,0,0,0
+2,thorax_rot2,0,1,-1.5708,1.5708,0,Trunk rotation or twisting motion,,0,0,0
+3,thorax_rot3,0,1,-1.5708,1.5708,0,Trunk flexion/extension or lean forward and back motion,,0,0,0
+4,elv_angle,0,1,-0.523599,2.2689,0,angle which shoulder will elevate from OpenSim,,0,0,0
+5,shoulder_elv,0,1,0,3.1416,0,Shoulder elevation from OpenSim,,0,0,0
+6,shoulder_rot,0,1,-1.5708,0.3491,0,Shoulder rotation motion from OpenSim,,0,0,0
+7,elbow_flexion,0,1,0,2.2689,0,Elbow flexion/extension motion from OpenSim,,0,0,0
+8,ra_wr_s_p,2,0,-1.3963,1.3963,0.0000,hand rotation motion; supination is negative; pronation is positive,Wrist Pro/Sup,0.01,0.25,0
+9,ra_wr_e_f,3,0,-1.2217,1.3963,0.0873,wrist flexion/extension motion; flexion is positive,Wrist F/E,0.075,0.5,0.0873
+10,ra_cmc1_ad_ab,6,0,0,0.8727,0.43635,thumb proximal  abduction/adduction motion,D1 CMC Ab/Ad,0.001,0.1,0.43635
+11,ra_cmc1_f_e,5,0,0,0.8727,0.43635,thumb proximal  flexion/extension  motion,D1 CMC F/E,0.001,0.1,0.43635
+12,ra_mcp1_f_e,7,0,-0.7854,0,-0.3927,thumb central flexion/extension motion,D1 MCP,0.000666666666666667,0.1,-0.3927
+13,ra_ip1_f_e,8,0,-1.5708,0,-0.7854,thumb distal flexion/extension motion,D1 IP,0.0005,0.1,-0.7854
+14,ra_mcp2_e_f,9,0,0,1.5708,0.7854,index proximal flexion/extension motion,D2 MCP,0.001,0.1,0.7854
+15,ra_pip2_e_f,10,0,0,2.0944,1.0472,index central flexion/extension motion,D2 PIP,0.000666666666666667,0.1,1.0472
+16,ra_dip2_e_f,11,0,0,1.5708,0.7854,index distal flexion/extension motion,D2 DIP,0.0005,0.1,0.7854
+17,ra_mcp3_e_f,12,0,0,1.5708,0.7854,middle proximal flexion/extension motion,D3 MCP,0.001,0.1,0.7854
+18,ra_pip3_e_f,13,0,0,2.0944,1.0472,middle central flexion/extension motion,D3 PIP,0.000666666666666667,0.1,1.0472
+19,ra_dip3_e_f,14,0,0,1.5708,0.7854,middle distal flexion/extension motion,D3 DIP,0.0005,0.1,0.7854
+20,ra_mcp4_e_f,15,0,0,1.5708,0.7854,ring proximal flexion/extension motion,D4 MCP,0.001,0.1,0.7854
+21,ra_pip4_e_f,16,0,0,2.0944,1.0472,ring central flexion/extension motion,D4 PIP,0.000666666666666667,0.1,1.0472
+22,ra_dip4_e_f,17,0,0,1.5708,0.7854,ring distal flexion/extension motion,D4 DIP,0.0005,0.1,0.7854
+23,ra_mcp5_e_f,18,0,0,1.5708,0.7854,pinky proximal flexion/extension motion,D5 MCP,0.001,0.1,0.7854
+24,ra_pip5_e_f,19,0,0,2.0944,1.0472,pinky central flexion/extension motion,D5 PIP,0.000666666666666667,0.1,1.0472
+25,ra_dip5_e_f,20,0,0,1.5708,0.7854,pinky distal flexion/extension motion,D5 DIP,0.0005,0.1,0.7854
+26,ra_sh_ab_ad,0,1,-3.1416,0,0,shoulder abduction/adduction motion,Sh Ab/Ad,0,0,0
+27,ra_sh_e_f,0,1,0,3.1416,0,shoulder flexion/extension motion,Sh F/E,0,0,0
+28,ra_sh_rot,0,1,-1.5708,0.3491,0,shoulder rotation motion,Sh Rot,0,0,0
+29,ra_el_e_f,1,0,0,2.2689,1.13445,elbow flexion/extension motion,Elbow F/E,0,0,0
+30,ra_wr_ad_ab,4,0,-0.35,0.52,0.09,wrist abduction/adduction motion; radial deviation is negative,Wrist Ab/Ad,0.01,0.1,0
+31,ra_mcp2_ab_ad,0,1,-0.2618,0.2618,0,index proximal abduction/adduction motion,D2 Ab/Ad,0,0,0
+32,ra_mcp3_ab_ad,0,1,-0.2618,0.2618,0,middle proximal abduction/adduction motion,D3 Ab/Ad,0,0,0
+33,ra_mcp4_ab_ad,0,1,-0.2618,0.2618,0,ring proximal abduction/adduction motion,D4 Ab/Ad,0,0,0
+34,ra_mcp5_ab_ad,0,1,-0.2618,0.2618,0,pinky proximal abduction/adduction motion,D5 Ab/Ad,0,0,0

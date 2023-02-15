@@ -1,0 +1,27 @@
+Body Name,Mass (kg),Description,type,dimensions (m)
+RA1H,1.9976,Upper arm,cylinder,L = 0.3000 ; d = 0.04
+RA2U,1.1053,fore arm,cylinder,L = 0.3000 ; d = 0.035
+RA3M,0.3148,metacarpals excluding the thumb,box,x = 0.045; y = 0.0125; z = 0.0375
+RA4P1,0.065,metacarpal thumb,cylinder,L = 0.0600 ; d = 0.01
+RA5C1,0.0193,thumb central,cylinder,L = 0.0400 ; d = 0.01
+RA6D1,0.0263,thumb distal,cylinder,L = 0.0360 ; d = 0.01
+RA4P2,0.0164,index finger proximal,cylinder,L = 0.0500 ; d = 0.01
+RA5C2,0.0168,index finger central,cylinder,L = 0.0300 ; d = 0.009
+RA6D2,0.0132,index finger distal,cylinder,L = 0.0225 ; d = 0.0075
+RA4P3,0.0204,middle finger proximal,cylinder,L = 0.0600 ; d = 0.01
+RA5C3,0.0168,middle finger central,cylinder,L = 0.0400 ; d = 0.009
+RA6D3,0.012,middle finger distal,cylinder,L = 0.0250 ; d = 0.0075
+RA4P4,0.0144,ring finger proximal,cylinder,L = 0.0550 ; d = 0.01
+RA5C4,0.0109,ring finger central,cylinder,L = 0.0350 ; d = 0.009
+RA6D4,0.0094,ring finger distal,cylinder,L = 0.0250 ; d = 0.0075
+RA4P5,0.0122,pinky finger proximal,cylinder,L = 0.0450 ; d = 0.01
+RA5C5,0.0074,pinky finger central,cylinder,L = 0.0250 ; d = 0.009
+RA6D5,0.0068,pinky finger distal,cylinder,L = 0.0200 ; d = 0.0075
+,,,,
+,,,,
+whole hand,0.5821,,,
+index finger,0.0464,,,
+middle finger,0.0492,,,
+ring finger ,0.0347,,,
+pinky finger,0.0264,,,
+thumb,0.1106,,,
