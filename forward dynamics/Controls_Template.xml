@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="30000">
+	<ControlSet name="SwingControls">
+		<defaults />
+        <objects>
+			<ControlLinear name="ra_wr_s_p_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_wr_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_wr_ad_ab_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_cmc1_ad_ab_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_cmc1_f_e_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_mcp1_f_e_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_ip1_f_e_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_mcp2_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+            <ControlLinear name="ra_pip2_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+			 <ControlLinear name="ra_dip2_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+			<ControlLinear name="ra_mcp3_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>   
+			<ControlLinear name="ra_pip3_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>    
+			<ControlLinear name="ra_dip3_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+			<ControlLinear name="ra_mcp4_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear> 
+			<ControlLinear name="ra_pip4_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>     
+			<ControlLinear name="ra_dip4_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>  
+			<ControlLinear name="ra_mcp5_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear> 
+			<ControlLinear name="ra_pip5_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear> 
+			<ControlLinear name="ra_dip5_e_f_moment">
+				<is_model_control>true</is_model_control>
+				<extrapolate>true</extrapolate>
+				<default_min>0.02</default_min>
+				<default_max>1</default_max>
+				<filter_on>false</filter_on>
+				<x_nodes></x_nodes>
+				<min_nodes />
+				<max_nodes />
+				<kp>100</kp>
+				<kv>20</kv>
+			</ControlLinear>
+        </objects>
+		<groups />
+	</ControlSet>
+</OpenSimDocument>
